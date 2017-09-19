@@ -13,7 +13,7 @@
 'use strict';
 
 var error_tip = function() {
-  if (top.confirm('脚本运行失败辣,你确定你是在答题界面吗？\n点击确定跳转到BB平台入口。')) {
+  if (top.confirm('脚本运行失败辣,你确定你是在答题界面吗？\n点击确定跳转到BB平台入口\n(请先通过CUSTED或门户登录BB平台)。')) {
     top.location.href = 'http://bb.cust.edu.cn/webapps/portal/frameset.jsp';
   }
 };
