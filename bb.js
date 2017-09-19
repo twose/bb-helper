@@ -10,6 +10,7 @@
 //
 // @include      http://bb.cust.edu.cn*
 // ==/UserScript==
+'use strict';
 
 var error_tip = function() {
   if (top.confirm('脚本运行失败辣,你确定你是在答题界面吗？\n点击确定跳转到BB平台入口。')) {
@@ -18,7 +19,6 @@ var error_tip = function() {
 };
 
 var helper = function() {
-  'use strict';
   try {
     top.removeEle = function(e) {
       if (e) {
@@ -50,12 +50,13 @@ var helper = function() {
       top.mf.r[x].content = (top.mf.r[x].tit = f[x].getElementsByClassName(
           'vtbegenerated inlineVtbegenerated')[0].getText()).substr(0, 15) +
           f[x].getElementsByTagName('table')[0].getText().replace(/\s/g, '');
+      var btn_l = '<button  class="button-4" style="margin-left:10px;"  onclick="top.search(';
       f[x].innerHTML =
           '<twosee style="display:block;position:relative;top:6px;">' +
           '<button class="button-4"  onclick="top.search(' + x + ')">搜标题</button>' +
-          '<button  class="button-4" style="margin-left:10px;"  onclick="top.search(' + x + ',1)">精准搜索</button>' +
-          '<button  class="button-4" style="margin-left:10px;"  onclick="top.search(' + x + ',2)">括号搜索①</button>' +
-          '<button  class="button-4" style="margin-left:10px;"  onclick="top.search(' + x + ',3)">括号搜索②</button>' +
+          btn_l + x + ',1)">精准搜索</button>' +
+          btn_l + x + ',2)">括号搜索①</button>' +
+          btn_l + x + ',3)">括号搜索②</button>' +
           '</twosee>' + f[x].innerHTML;
     }
     top.mark = function(id) {
