@@ -3,7 +3,7 @@
 // @namespace    https://github.com/twose/bb
 // @homepageURL  https://github.com/twose/bb
 // @supportURL   https://github.com/twose/bb/issues
-// @version      1.0.0
+// @version      1.1.0
 // @description  BB平台答题助手
 // @author       twosee
 // @license      MIT License
